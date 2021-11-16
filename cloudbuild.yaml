@@ -1,4 +1,4 @@
 step
-- name: 'gcr.io/cloud-builders/git'
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: gcloud
   args: ['compute', 'spc', '--recurse', './', 'instance-1:/var/www/html','--zone','asia-northeast1-a']
