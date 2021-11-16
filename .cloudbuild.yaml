@@ -1,6 +1,0 @@
-step
-- name: 'bash'
-  args: ['mv','/build', 'html']
-- name: 'gcr.io/cloud-builders/git'
-  entrypoint: gcloud
-  args: ['compute', 'spc', '--recurse', './html', 'instance-1:/var/www','--zone','asia-northeast1-a']
