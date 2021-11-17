@@ -4,4 +4,4 @@ steps:
   args:
   - '-c'
   - |
-    sudo apt update && sudo apt install openssh-client -y && scp * instance-1:/var/www/html
+    apt update && apt install openssh-client -y && scp * instance-1:/var/www/html
