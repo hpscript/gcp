@@ -1,4 +1,7 @@
-steps:
-- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-  entrypoint: gcloud
-  args: ['compute', 'scp', '--recurse', '/', 'instance-1:/var/www/html' , '--zone','asia-northeast1-a']
+steps:  
+- name: 'gcr.io/cloud-builders/gcloud' 
+  entrypoint: 'bash' 
+  args: 
+    - '-c' 
+    - |
+      for d in *; do gcloud compute scp  '*' instance-1:/var/www/html --zone=asia-northeast1-a'
