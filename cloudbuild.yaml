@@ -1,4 +1,7 @@
 steps:
-- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-  entrypoint: gcloud
-  args: ['compute', 'scp', '--recurse', '/', 'instance-1:/var/www/html' , '--zone','asia-northeast1-a']
+- name: 'ubuntu'
+  entrypoint: 'bash'
+  args:
+  - '-c'
+  - |
+    sudo apt update && sudo apt install openssh-client -y && scp * instance-1:/var/www/html
