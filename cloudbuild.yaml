@@ -1,5 +1,5 @@
 steps:
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: gcloud
-  args: ['compute', 'scp', '--recurse', 'tmcn.jpg', 'instance-1:/var/www/html/tmcn.jpg' , '--zone','asia-northeast1-a']
+  args: ['compute', 'scp', '--recurse', 'img', 'instance-1:/var/www/html/img' , '--zone','asia-northeast1-a']
   args: ['compute', 'scp', '--recurse', 'index.html', 'instance-1:/var/www/html/index.html' , '--zone','asia-northeast1-a']

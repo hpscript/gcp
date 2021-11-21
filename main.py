@@ -29,4 +29,4 @@ ax1.set_ylabel('$close-price(pink)$')
 ax2.plot(x, y2, marker="o", color = "cyan", linestyle = ":")
 ax2.set_ylabel('$trade-volume(blue)$')
 
-plt.savefig('tmcn.jpg',dpi=100)
+plt.savefig('img/tmcn.jpg',dpi=100)
