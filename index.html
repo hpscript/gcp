@@ -3,10 +3,54 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/dracula.min.css">
+
+	<title>TMCN</title>
 </head>
 <body>
-	<h1>GCP Test</h1>
-	<p>Paragraph added!</p>
+	<h1>timcoin protocol</h1>
+	<a href="https://github.com/TimeCoinProtocol/timecoin">TimeCoinProtocol / timecoin</a><br>
+	<!-- <img src="tmcn.jpg" width="400" height="300"> -->
+	<p>contract / Migrations.sol</p>
+	<pre><code>{
+  pragma solidity 0.6.2;
+
+contract Migrations {
+  address public owner;
+  uint public last_completed_migration;
+
+  modifier restricted() {
+    if (msg.sender == owner) _;
+  }
+
+  constructor() public {
+    owner = msg.sender;
+  }
+
+  function setCompleted(uint completed) public restricted {
+    last_completed_migration = completed;
+  }
+
+  function upgrade(address new_address) public restricted {
+    Migrations upgraded = Migrations(new_address);
+    upgraded.setCompleted(last_completed_migration);
+  }
+}
+    </code></pre>
+    <br>
+    <p>contracts / MyToken.sol</p>
+	<pre><code>{
+  pragma solidity 0.6.2;
+
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+
+contract MyToken is ERC20 {
+  constructor() public ERC20("Timecoin", "TMCN") {
+    _mint(msg.sender, 100000000 * 10 ** uint256(18));
+  }
+}
+    </code></pre>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>
